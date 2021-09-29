@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+
+            <input  type="text" class="form-control" placeholder="Employee Name"
+            [(ngModel)]="employee.name" name="name">
+            <input  type="text" class="form-control" placeholder="Role"
+            [(ngModel)]="employee.role" name="role">
+            <button  class="btn btn-danger mt-3" (click)="createEmployee()">Create Employee</button>
+
+            <table class="table table-bordered mt-3">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Emp Name</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="userlist.length > 0">
+                    <tr *ngFor="let i of userlist; index as userno">
+                        <td>{{userno + 1}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.role}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
